@@ -1,6 +1,6 @@
 export const fetchPosts = () => {
   return dispatch => {
-    return fetch('https://demoapp-50039.firebaseio.com/posts.json')
+    return fetch("YOUR_FIREBASE_URL")
     .then(res => res.json())
       .then(data => {
         let posts = [];
@@ -22,7 +22,7 @@ export const fetchPosts = () => {
 
 export const addPost = (data) => {
   return dispatch => {
-    return fetch('https://demoapp-50039.firebaseio.com/posts.json',
+    return fetch("YOUR_FIREBASE_URL",
       {
         method: 'POST',
         header: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ export const addPost = (data) => {
 
 export const deletePost = (id) => {
   return dispatch => {
-  return fetch(`https://demoapp-50039.firebaseio.com/posts/${id}.json`,
+  return fetch(`"YOUR_FIREBASE_URL"/${id}.json`,
     {
       method: 'DELETE',
       header: { 'Content-Type': 'application/json' }
@@ -61,7 +61,7 @@ export const updatePost = ({id, title, content}) => {
 
 
   return dispatch => {
-    return fetch(`https://demoapp-50039.firebaseio.com/posts/${id}.json`,
+    return fetch(`"YOUR_FIREBASE_URL"/${id}.json`,
       {
         method: 'PATCH',
         header: { 'Content-Type': 'application/json' },
